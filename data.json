@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "id": 1,
+        "task": "Main Node js",
+        "status": false,
+        "checkBox": "[ ]"
+    },
+    {
+        "id": 2,
+        "task": "Bikin Aplikasi",
+        "status": false,
+        "checkBox": "[ ]"
+    },
+    {
+        "id": 3,
+        "task": "Makan siang",
+        "status": false,
+        "checkBox": "[ ]"
+    },
+    {
+        "id": 4,
+        "task": "Makan sore",
+        "status": false,
+        "checkBox": "[ ]"
+    }
+]
