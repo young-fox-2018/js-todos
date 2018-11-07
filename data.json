@@ -1,1 +1,73 @@
-[]
+[
+  {
+    "task": "Bikin aplikasi",
+    "completed": false,
+    "tag": [
+      "work"
+    ],
+    "create_date": "2018-11-07T08:19:09.174Z",
+    "update_date": "2018-11-07T08:19:09.174Z"
+  },
+  {
+    "task": "Main Node.js",
+    "completed": false,
+    "tag": [],
+    "create_date": "2017-11-07T04:19:09.174Z",
+    "update_date": "2018-11-07T04:19:09.174Z"
+  },
+  {
+    "task": "Sleep",
+    "completed": false,
+    "tag": [],
+    "create_date": "2015-11-07T09:21:31.395Z",
+    "update_date": "2018-11-07T09:21:31.395Z"
+  },
+  {
+    "task": "Eat",
+    "completed": true,
+    "tag": [],
+    "create_date": "2018-11-07T09:21:35.441Z",
+    "update_date": "2018-11-07T09:21:35.441Z"
+  },
+  {
+    "task": "Coding",
+    "completed": false,
+    "tag": [
+      "hobby",
+      "work"
+    ],
+    "create_date": "2018-11-07T09:21:52.713Z",
+    "update_date": "2018-11-07T11:21:15.253Z"
+  },
+  {
+    "task": "Exercise",
+    "completed": true,
+    "tag": [],
+    "create_date": "2018-11-07T09:22:16.052Z",
+    "update_date": "2018-11-07T09:22:16.052Z"
+  },
+  {
+    "task": "Break",
+    "completed": false,
+    "tag": [],
+    "create_date": "2018-11-07T09:47:21.765Z",
+    "update_date": "2018-11-07T09:47:21.765Z"
+  },
+  {
+    "task": "Live Code",
+    "tag": [],
+    "completed": false,
+    "create_date": "2018-11-07T11:20:38.707Z",
+    "update_date": "2018-11-07T11:20:38.707Z"
+  },
+  {
+    "task": "Play with cat",
+    "completed": false,
+    "tag": [
+      "pet",
+      "hobby"
+    ],
+    "create_date": "2018-11-07T11:36:02.151Z",
+    "update_date": "2018-11-07T11:36:02.151Z"
+  }
+]
