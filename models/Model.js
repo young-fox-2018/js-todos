@@ -1,7 +1,7 @@
 "use strict"
 
 const fs = require('fs')
-const jsonLocation = '/Users/hacktiv8/Desktop/robert/robert/js-todos/data.json'
+const jsonLocation = './data.json'
 
 class Model {
     static readDataFromJSON() {
@@ -11,10 +11,37 @@ class Model {
         return data
     }
 
-    static getSortedList(command, options, message) {
+    static getSortedList(command, extraCommand, options, objectToSort) {
         let jsonData = Model.readDataFromJSON()
+       
+        if (command === 'filter' && options === 'asc') {
+            console.log('ADASDAD')
+            for (let i = 0; i < objectToSort.length; i++) {
+                for (let j = i + 1; j < objectToSort.length; j++) {
+                    if (objectToSort[j].updateTime < objectToSort[i].updateTime) {
+                        temp = objectToSort[i]
+                        objectToSort[i] = objectToSort[j]
+                        objectToSortsult[j] = temp
+                    }
+                }
+            }
+            
+            jsonData = objectToSort
+        } else if (objectToSort != null && command === 'filter' && options === 'desc') {
+            let result = []
+    
+            for (let i = 0; i < objectToSort.length; i++) {
+                for (let j = i + 1; j < objectToSort.length; j++) {
+                    if (objectToSort[j].updateTime < objectToSort[i].updateTime) {
+                        temp = objectToSort[i]
+                        objectToSort[i] = objectToSort[j]
+                        objectToSort[j] = temp
+                    }
+                }
+            }
 
-        if (options === 'desc' || options === '') {
+            jsonData = objectToSort
+        }else if (options === 'desc' || options === '') {
             for (let i = 0; i < jsonData.length; i++) {
                 let temp = null
 
@@ -27,7 +54,6 @@ class Model {
                 }
             }
         } else if (options === 'asc') {
-            console.log('asdad')
             for (let i = 0; i < jsonData.length; i++) {
                 let temp = null
 
@@ -39,7 +65,7 @@ class Model {
                     }
                 }
             }
-        } else if (command === 'list:completed') {
+        } else if (extraCommand === 'completed') {
             let result = []
 
             for (let i = 0; i < jsonData.length; i++) {
@@ -56,16 +82,16 @@ class Model {
                         result[j] = temp
                     }
                 }
-            }
+            }  
 
             jsonData = result
-        }
-
+        }   
+        
         return jsonData
     }
 
     static addToJSONFile(jsonData) {
-        jsonData = JSON.stringify(jsonData)
+        jsonData = JSON.stringify(jsonData,null,4)
         fs.writeFileSync(jsonLocation, jsonData)
     }
 
@@ -74,7 +100,8 @@ class Model {
 
         let dataToAdd = {
             task : data,
-            status : "[ ]",
+            status : false,
+            updatedTime : "",
             created : new Date()
         }
 
@@ -104,6 +131,7 @@ class Model {
     static update(command, options, message) {
         let data = Model.readDataFromJSON()
         options = Number(options)
+        let tagUser = null
 
         if (command === 'complete') {
             for (let i = 0 ; i < data.length; i++) {
@@ -122,20 +150,30 @@ class Model {
                 }
             }
         } else if (command === 'tag') {
-            console.log(message, "ASAS")
             for (let i = 0 ; i < data.length; i++) {
                 if ( i + 1 === options) {
-                    data[i].tag = message
+                    if (data[i].tag == null) {
+                        data[i].tag = [message]
+                    } else {
+                        if (!data[i].tag.includes(message)) {
+                            data[i].tag.push(message)
+                        }
+                    }
+
                     data[i].updateTime = new Date()
+                    tagUser = data[i]
                     break
                 }
-            }
-            
+            }     
         }
 
         Model.addToJSONFile(data)
 
-        return data
+        if (tagUser != null) {
+            return tagUser
+        } else {
+            return data
+        }
     }
 
     static delete(options) {
@@ -146,7 +184,6 @@ class Model {
 
         for (let i = 0 ; i < data.length; i++) {
             if ( i + 1 === options) {
-                console.log('masuk ga')
                 deletedData = data[i].task
                 data.splice(i, 1)
                 break
@@ -156,6 +193,25 @@ class Model {
         Model.addToJSONFile(data)
 
         return deletedData
+    }
+
+    static filter(command, extraCommand, options, objectToSort) {
+        let data = Model.readDataFromJSON()
+        let result = []
+        
+        for (let i = 0 ; i < data.length; i++) {
+            if (data[i].tag != null) {
+                for (let j = 0 ; j < data[i].tag.length; j++) {
+                    if (data[i].tag[j] === extraCommand) {
+                        result.push(data[i])
+                    }
+                } 
+            }
+        } 
+     
+        result = Model.getSortedList(command, '', options, result)
+
+        return result
     }
 }
 

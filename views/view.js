@@ -26,6 +26,20 @@ class View {
     static printDeletedData(data) {
         console.log(`Deleted ${data} to your TODO list`)
     }
+
+    static printTagData(data) {
+        console.log(`Tagged task ${data.task} with tags: ${data.tag} `)
+    }
+
+    static printFilterData(data) {
+        let result = ""
+
+        for (let i = 0; i < data.length; i++) {
+           result += `${data[i].task} ${data[i].tag}`
+        }
+
+        console.log(result)
+    }
 }
 
 module.exports = View

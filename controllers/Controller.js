@@ -4,17 +4,11 @@ const Model = require('../models/Model')
 const View = require('/Users/hacktiv8/Desktop/robert/robert/js-todos/views/view.js')
 
 class Controller {
-    static inputCommand(command, options, message) {
+    static inputCommand(command,extraCommand, options, message) {
         switch (command) {
             case 'list':
-                Controller.getList()
-                break;
-            case 'list:created':
-                Controller.getSortedList(command, options)
-                break;
-            case 'list:completed':
-                Controller.getSortedList(command, options)
-                break;
+                Controller.getSortedList(command,extraCommand, options)
+                break
             case 'add':
                 Controller.addData(options)
                 break;
@@ -25,20 +19,18 @@ class Controller {
                 Controller.delete(options)
                 break;
             case 'complete':
-            Controller.update(command, options)
-            break;
+                Controller.update(command, options)
+                break;
             case 'uncomplete':
-            Controller.update(command, options)
-            break;
+                Controller.update(command, options)
+                break;
             case 'tag':
-            Controller.update(command, options, message)
-            break;
+                Controller.update(command, options, message)
+                break;
+            case 'filter':
+                Controller.filter(command, extraCommand, options)
+                break;
         }    
-    }
-
-    static getList() {
-        let data = Model.readDataFromJSON()
-        View.printData(data)
     }
 
     static addData(options) {
@@ -59,13 +51,21 @@ class Controller {
 
     static update(command, options, message) {
         let result = Model.update(command, options, message)
+        if (message != null) {
+            View.printTagData(result)
+        } else {
+            View.printData(result)
+        }
+    }
+
+    static getSortedList(command,extraCommand, options) {
+        let result = Model.getSortedList(command,extraCommand, options)
         View.printData(result)
     }
 
-    static getSortedList(command, options) {
-        let result = Model.getSortedList(command, options)
-
-        View.printData(result)
+    static filter(command, extraCommand, options) {
+        let data = Model.filter(command, extraCommand, options)  
+        View.printFilterData(data)
     }
 }
 
