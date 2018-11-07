@@ -1,1 +1,29 @@
-[]
+[
+    {
+        "task_id": 1,
+        "task": "membuat aplikasi",
+        "status": "[ ]",
+        "created_date": 5,
+        "completed_date": 0,
+        "tags": []
+    },
+    {
+        "task_id": 2,
+        "task": "membuat sudoku",
+        "status": "[x]",
+        "created_date": 7,
+        "completed_date": 6,
+        "tags": []
+    },
+    {
+        "task_id": 3,
+        "task": "belajar node js",
+        "status": "[ ]",
+        "created_date": 7,
+        "completed_date": 0,
+        "tags": [
+            "hobby",
+            "homework"
+        ]
+    }
+]
