@@ -1,12 +1,16 @@
 
 class View{
     static help(){
-        console.log(`node todo.js\nnode todo.js help\nnode todo.js list\nnode todo.js add <task_content>\nnode todo.js findById <task_id>\nnode todo.js <task_id>\nnode todo.js <task_id>\nnode todo.js <task_id>`)
+        console.log(`node todo.js\nnode todo.js help\nnode todo.js list\nnode todo.js add <task_content>\nnode todo.js findById <task_id>\nnode todo.js delete <task_id>\nnode todo.js complete <task_id>\nnode todo.js uncomplete <task_id>\nnode todo.js list:created <sort>\nnode todo.js list:completed <sort>\nnode todo.js tag <task_id> <add name tag>\nnode todo.js filter:<tag>`)
     }
 
     static list(data){
         for( let i = 0; i < data.length; i++){
-            console.log( `${(i+1)}. ${data[i].completed} ${data[i].task}`);
+            if(data[i].completed){
+                console.log( `${(i+1)}. [x] ${data[i].task}`);
+            } else {
+                console.log( `${(i+1)}. [ ] ${data[i].task}`);
+            }
         }
     }
 
