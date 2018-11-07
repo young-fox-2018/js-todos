@@ -1,1 +1,60 @@
-[]
+[
+  {
+    "id": 1,
+    "mark": true,
+    "task": "solve sudoku",
+    "createdAt": "2018-11-04T08:31:29.995Z",
+    "completedAt": null,
+    "completeTask": "2018-11-07T09:21:48.142Z",
+    "tags": [
+      "headache",
+      "logic"
+    ]
+  },
+  {
+    "id": 2,
+    "mark": false,
+    "task": "beli nasgor",
+    "createdAt": "2018-11-05T08:31:37.072Z",
+    "completedAt": null,
+    "tags": [
+      "eat",
+      "culinary"
+    ]
+  },
+  {
+    "id": 3,
+    "mark": true,
+    "task": "coding dong",
+    "createdAt": "2018-10-30T08:31:48.390Z",
+    "completedAt": null,
+    "completeTask": "2018-11-07T09:21:44.147Z",
+    "tags": [
+      "work",
+      "money"
+    ]
+  },
+  {
+    "id": 4,
+    "mark": false,
+    "task": "jalan kaki ke mall",
+    "createdAt": "2018-10-21T08:55:38.784Z",
+    "completedAt": null,
+    "tags": [
+      "shop",
+      "sosialite"
+    ]
+  },
+  {
+    "id": 5,
+    "mark": false,
+    "task": "ngeBakso di jalan gang",
+    "createdAt": "2018-11-07T09:17:36.460Z",
+    "completedAt": null,
+    "tags": [
+      "eat",
+      "sosialite",
+      "culinary"
+    ]
+  }
+]
