@@ -18,6 +18,17 @@ class Model {
         return Model.readData()
     }
 
+    static listCompleted(){
+        let list = Model.readData();
+        let result = [];
+
+        for (let i = 0; i < list.length; i++){
+            if(list[i].status === true) result.push(list[i])
+        }
+
+        return result;
+    }
+
     static addTask (task){
         let currentData = Model.readData()
 
@@ -29,7 +40,9 @@ class Model {
         let temp = {
             "task" : task,
             "id" : id,
-            "status" : false
+            "status" : false,
+            "created_at" : new Date(),
+            "completed_at" : null
         }
 
         currentData.push(temp)
@@ -72,7 +85,10 @@ class Model {
         let currentData = Model.readData();
 
         for( let i = 0; i < currentData.length; i++){
-            if(currentData[i].id === id) currentData[i].status = true;
+            if(currentData[i].id === id){ 
+                currentData[i].status = true;
+                currentData[i].completed_at = new Date();
+            }
         }
 
         Model.save(currentData)
@@ -82,10 +98,47 @@ class Model {
         let currentData = Model.readData();
 
         for( let i = 0; i < currentData.length; i++){
-            if(currentData[i].id === id) currentData[i].status = false;
+            if(currentData[i].id === id){
+                 currentData[i].status = false;
+                 currentData[i].completed_at = null;
+            }
         }
 
         Model.save(currentData)
+    }
+
+    static tag (data){
+        let id = Number(data[0]);
+        let tags = data.slice(1).trim().split(" ")
+        let currentData = this.readData();
+        
+        
+        for( let i = 0; i < currentData.length; i++){
+            if(currentData[i].id === id){
+                currentData[i].tags = tags;
+                Model.save(currentData)
+                return currentData[i].task
+            }
+        }
+
+        return null
+
+    }
+
+    static filter (tag){
+        let currentData = this.readData();
+        let tagRegExp = new RegExp (tag, "g");
+        let result = []
+
+        for(let i = 0; i < currentData.length; i++){
+            if(currentData[i].tags !== undefined){
+                if(currentData[i].tags.join("").match(tagRegExp)){
+                    result.push(currentData[i])
+                }
+            }
+        }
+
+        return result
     }
 
     static save (data){

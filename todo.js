@@ -4,10 +4,17 @@ const Controller = require("./Controller/Controller")
 
 let command = argv[0];
 let option = argv.slice(1).join(" ");
+let commandExt
+
+if(command.match(/:/g)){
+    command = command.split(":")
+    commandExt = command[1];
+    command = command[0]
+}
 
 switch (command) {
     case "list":
-        Controller.list(option)
+        Controller.list(commandExt, option)
         break;
     
     case "help":
@@ -32,6 +39,14 @@ switch (command) {
 
     case "uncomplete":
         Controller.uncomplete(Number(option))
+        break;
+
+    case "tag":
+        Controller.tag(option)
+        break;
+
+    case "filter":
+        Controller.filter(commandExt)
         break;
 
     default:

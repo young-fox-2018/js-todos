@@ -3,8 +3,21 @@ const Model = require("../Models/Model")
 
 class Controller {
 
-    static list(){
-        let list = Model.list();
+    static list(commandExt, option){
+        let list = []
+        if(commandExt === undefined){
+            list = Model.list();
+        }
+        else if(commandExt === "completed"){
+            list = Model.listCompleted();
+            list.sort(function(a, b){return a.completed_at < b.completed_at})            
+        }
+        else{
+            View.console(`list by that order is not available`)
+            return false
+        }
+
+        if(option === "desc") list.reverse()
 
         for( let i = 0; i < list.length; i++){
             View.display(list[i].id, list[i].status, list[i].task)
@@ -54,6 +67,28 @@ class Controller {
     static findById(id){
         let result = Model.findById(id)
         View.display(result.id, result. task)
+    }
+
+    //data[0] == id dan sisanya == tag
+    static tag(data){
+        let taggedTask = Model.tag(data);
+        let tags = data.slice(1).trim()
+
+        if(!taggedTask) {
+            View.console(`failed to add tags`)
+            return false;
+        } else {
+            View.console(`tagged task "${taggedTask}" with tags: ${tags}`)
+        }
+
+    }
+
+    static filter(tag){
+        let filtered = Model.filter(tag);
+
+        for(let i = 0; i < filtered.length; i++){
+            View.display(filtered[i].id, "", filtered[i].task, filtered[i].tags)
+        }
     }
 }
 
