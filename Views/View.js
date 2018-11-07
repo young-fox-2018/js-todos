@@ -20,6 +20,18 @@ class View {
     static showUncomplete(input) {
         console.log(input)
     }
+    static showCreatedList(input) {
+        console.log(input)
+    }
+    static showCompletedList(input) {
+        console.log(input)
+    }
+    static showAddTags(input) {
+        console.log(input)
+    }
+    static showFilterTags(input) {
+        console.log(input)
+    }
 }
 
 module.exports = View

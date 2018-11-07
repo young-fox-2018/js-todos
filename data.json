@@ -1,32 +1,47 @@
 [
     {
         "id": 1,
-        "task": "Main Node js",
+        "task": "Bikin Aplikasi",
         "status": false,
-        "checkBox": "[ ]"
+        "createdAt": "2018-11-07T10:11:57.797Z",
+        "updatedAt": "null",
+        "tags": [
+            "work"
+        ]
     },
     {
         "id": 2,
-        "task": "Bikin Aplikasi",
+        "task": "Main Node js",
         "status": false,
-        "checkBox": "[ ]"
+        "createdAt": "2018-11-07T10:12:02.876Z",
+        "updatedAt": "null",
+        "tags": []
     },
     {
         "id": 3,
-        "task": "Makan siang",
+        "task": "Makan Siang",
         "status": false,
-        "checkBox": "[ ]"
+        "createdAt": "2018-11-07T10:12:12.177Z",
+        "updatedAt": "2018-11-07T11:14:50.007Z",
+        "tags": []
     },
     {
         "id": 4,
-        "task": "Makan sore",
-        "status": false,
-        "checkBox": "[ ]"
+        "task": "Main Bola",
+        "status": true,
+        "createdAt": "2018-11-07T10:12:18.563Z",
+        "updatedAt": "2018-11-07T10:26:32.269Z",
+        "tags": [
+            "hobby",
+            "sport"
+        ]
     },
     {
         "id": 5,
-        "task": "Makan malam",
-        "status": false,
-        "checkBox": "[ ]"
+        "task": "Tidur",
+        "status": true,
+        "createdAt": "2018-11-07T10:28:30.517Z",
+        "updatedAt": "2018-11-07T10:28:38.402Z",
+        "tags": []
     }
 ]

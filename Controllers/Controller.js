@@ -30,6 +30,22 @@ class Controller {
         let data = Model.uncomplete(input)
         View.showUncomplete(data)
     }
+    static createdList(input) {
+        let data = Model.createdList(input)
+        View.showCreatedList(data)
+    }
+    static completedList(input) {
+        let data = Model.completedList(input)
+        View.showCompletedList(data)
+    }
+    static addTags(id, input) {
+        let data = Model.addTags(id, input)
+        View.showAddTags(data)
+    }
+    static filterTags(input) {
+        let data = Model.filterTags(input)
+        View.showFilterTags(data)
+    }
 }
 
 module.exports = Controller

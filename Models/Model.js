@@ -25,7 +25,12 @@ class Model {
         let dataBase = JSON.parse(Model.readData('./data.json'))
         let result = ''
         for (let i = 0; i < dataBase.length; i++) {
-            result += `${dataBase[i].id}. ${dataBase[i].checkBox} ${dataBase[i].task} \n`
+            if (dataBase[i].status) {
+                result += `${dataBase[i].id}. [X] ${dataBase[i].task} \n`
+            } else {
+                result += `${dataBase[i].id}. [ ] ${dataBase[i].task} \n`
+            }
+
         }
         return result
     }
@@ -56,9 +61,7 @@ class Model {
         for (let i = 0; i < dataBase.length; i++) {
             if (Number(id) === dataBase[i].id) {
                 dataBase[i].status = true
-                if (dataBase[i].status) {
-                    dataBase[i].checkBox = '[X]'
-                }
+                dataBase[i].updatedAt = new Date()
             }
         }
         Model.writeData('./data.json', JSON.stringify(dataBase, null, 4))
@@ -69,16 +72,111 @@ class Model {
         for (let i = 0; i < dataBase.length; i++) {
             if (Number(id) === dataBase[i].id) {
                 dataBase[i].status = false
-                if (!dataBase[i].status) {
-                    dataBase[i].checkBox = '[ ]'
-                }
             }
         }
         Model.writeData('./data.json', JSON.stringify(dataBase, null, 4))
         return Model.list()
     }
+    static createdList(input) {
+        let dataBase = JSON.parse(Model.readData('./data.json'))
+        if (input === 'desc') {
+            dataBase.sort(function (a, b) {
+                return new Date(b.createdAt) - new Date(a.createdAt)
+            })
+            let result = ''
+            for (let i = 0; i < dataBase.length; i++) {
+                if (dataBase[i].status) {
+                    result += `${dataBase[i].id}. [X] ${dataBase[i].task} \n`
+                } else {
+                    result += `${dataBase[i].id}. [ ] ${dataBase[i].task} \n`
+                }
 
+            }
+            return result
+
+        } else if (input === 'asc') {
+            dataBase.sort(function (a, b) {
+                return new Date(a.createdAt) - new Date(b.createdAt)
+            })
+            let result = ''
+            for (let i = 0; i < dataBase.length; i++) {
+                if (dataBase[i].status) {
+                    result += `${dataBase[i].id}. [X] ${dataBase[i].task} \n`
+                } else {
+                    result += `${dataBase[i].id}. [ ] ${dataBase[i].task} \n`
+                }
+            }
+            return result
+        }
+    }
+    static completedList(input) {
+        let dataBase = JSON.parse(Model.readData('./data.json'))
+        if (input === 'desc') {
+            dataBase.sort(function (a, b) {
+                return new Date(b.createdAt) - new Date(a.createdAt)
+            })
+            let result = ''
+            for (let i = 0; i < dataBase.length; i++) {
+                if (dataBase[i].status) {
+                    result += `${i + 1}. [X] ${dataBase[i].task} \n`
+                }
+            }
+            return result
+
+        } else if (input === 'asc') {
+            dataBase.sort(function (a, b) {
+                return new Date(a.createdAt) - new Date(b.createdAt)
+            })
+            let result = ''
+            for (let i = 0; i < dataBase.length; i++) {
+                if (dataBase[i].status) {
+                    result += `${i - 1}. [X] ${dataBase[i].task} \n`
+                }
+            }
+            return result
+        }
+    }
+    static addTags(id, input) {
+        let dataBase = JSON.parse(Model.readData('./data.json'))
+        let result = ''
+        let condition = false
+        for (let i = 0; i < dataBase.length; i++) {
+            if (Number(id) === dataBase[i].id) {
+                if (!dataBase[i].tags.length) {
+                    dataBase[i].tags.push(input)
+                    result = `Tagged task with ${dataBase[i].task} with tags:${input}`
+                } else {
+                    for (let j = 0; j < dataBase[i].tags.length; j++) {
+                        if (dataBase[i].tags[j] === input) {
+                            result = `Tag name already exists`
+                            condition = true
+                        } else {
+                            dataBase[i].tags.push(input)
+                            result = `Tagged task with ${dataBase[i].task} with tags:${input}`
+                        }
+                    }
+                }
+
+            }
+        }
+        Model.writeData('./data.json', JSON.stringify(dataBase, null, 4))
+        return result
+    }
+    static filterTags(input) {
+        let dataBase = JSON.parse(Model.readData('./data.json'))
+        let result = ''
+        for (let i = 0; i < dataBase.length; i++) {
+            for (let j = 0; j < dataBase[i].tags.length; j++) {
+                if (input === dataBase[i].tags[j]) {
+                    result = `${dataBase[i].id}. ${dataBase[i].task} tags: [${dataBase[i].tags}]`
+                }
+            }
+        }
+        return result
+    }
 }
+
+//}
 
 
 

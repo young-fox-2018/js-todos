@@ -23,4 +23,16 @@ switch (argv[2]) {
     case 'uncomplete':
         Controller.uncomplete(argv[3])
         break;
+    case 'list:created':
+        Controller.createdList(argv[3])
+        break;
+    case 'list:completed':
+        Controller.completedList(argv[3])
+        break;
+    case 'tag':
+        Controller.addTags(argv[3], argv[4])
+        break;
+    case 'filter:':
+        Controller.filterTags(argv[3])
+        break;
 }
