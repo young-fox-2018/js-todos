@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "id": 0,
+        "name": "makan",
+        "status": "x",
+        "createdAt": "2018-11-07T09:37:39.935Z",
+        "updatedAt": "2018-11-07T09:39:57.019Z"
+    },
+    {
+        "id": 1,
+        "name": "minum",
+        "status": " ",
+        "createdAt": "2018-11-07T09:37:46.535Z",
+        "updatedAt": "2018-11-07T09:37:46.535Z"
+    },
+    {
+        "id": 2,
+        "name": "mandi",
+        "status": " ",
+        "createdAt": "2018-11-07T09:37:51.079Z",
+        "updatedAt": "2018-11-07T09:37:51.079Z"
+    },
+    {
+        "id": 3,
+        "name": "tidur",
+        "status": "x",
+        "createdAt": "2018-11-07T09:37:54.813Z",
+        "updatedAt": "2018-11-07T09:40:05.695Z"
+    }
+]
