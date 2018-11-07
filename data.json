@@ -1,1 +1,27 @@
-[]
+[
+  {
+    "id": 1,
+    "completed": false,
+    "task": "Cook for dinner",
+    "created": "2018-11-07T10:08:05.390Z",
+    "updated": "2018-11-07T10:08:05.390Z"
+  },
+  {
+    "id": 2,
+    "completed": false,
+    "task": "Study for tomorrow live code",
+    "created": "2018-11-07T10:08:20.801Z",
+    "updated": "2018-11-07T10:08:20.801Z",
+    "tag": [
+      "javascript",
+      "oop"
+    ]
+  },
+  {
+    "id": 3,
+    "completed": true,
+    "task": "Buy fruits",
+    "created": "2018-11-07T10:08:31.360Z",
+    "updated": "2018-11-07T10:22:05.451Z"
+  }
+]
