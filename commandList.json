@@ -1,0 +1,9 @@
+[
+    {"command": "$ node todo.js help"},
+    {"command": "$ node todo.js list"},
+    {"command": "$ node todo.js add <task_content>"},
+    {"command": "$ node todo.js findById <task_id>"},
+    {"command": "$ node todo.js delete <task_id>"},
+    {"command": "$ node todo.js complete <task_id>"},
+    {"command": "$ node todo.js uncomplete <task_id>"}
+]

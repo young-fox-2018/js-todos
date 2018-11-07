@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "task": "Bikin aplikasi",
+    "status": false,
+    "createdAt": "2018-11-07T12:51:20.422Z",
+    "completedAt": "null",
+    "tags": [
+      "smartphone",
+      "apps",
+      "canggih",
+      "mobile"
+    ]
+  },
+  {
+    "task": "Main node.js",
+    "status": true,
+    "createdAt": "2018-11-07T12:51:27.882Z",
+    "completedAt": "2018-11-07T14:45:09.004Z",
+    "tags": [
+      "computer",
+      "coding",
+      "hobby",
+      "asas",
+      "gagag",
+      "ajagijig"
+    ]
+  }
+]
