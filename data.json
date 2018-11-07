@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "task": "Main Node.js",
+    "status": true,
+    "createdAt": "2018-11-07T05:22:59.274Z",
+    "updatedAt": "2018-11-07T13:59:30.907Z",
+    "tags": [
+      "Training",
+      "Hacktiv8"
+    ]
+  },
+  {
+    "task": "Practice coding for livecode",
+    "status": false,
+    "createdAt": "2018-11-07T08:24:09.274Z",
+    "updatedAt": "2018-11-07T09:32:31.513Z",
+    "tags": [
+      "Prepping",
+      "Hacktiv8"
+    ]
+  },
+  {
+    "task": "Do Exercises to prep for LiveCode tomorrow",
+    "status": true,
+    "createdAt": "2018-11-07T08:54:11.376Z",
+    "updatedAt": "2018-11-07T14:03:48.869Z",
+    "tags": []
+  }
+]
