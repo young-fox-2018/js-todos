@@ -1,1 +1,27 @@
-[]
+[
+  { "id" :1,
+    "task": "Bikin aplikasi",
+    "complete" : false,
+    "checkBox" : [ ]
+  },
+  {
+    "task": "Main node js",
+    "complete" : false,
+    "checkBox" : [ ]
+  },
+  {
+    "task": "hello",
+    "complete" : false,
+    "checkBox" : [ ]
+  },
+  {
+    "task": "hello",
+    "complete" : false,
+    "checkBox" : [ ]
+  },
+  {
+    "task": "infinity",
+    "complete" : false,
+    "checkBox" : [ ]
+  }
+]
