@@ -1,17 +1,27 @@
 [
   {
     "id": 1,
-    "status": "uncomplete",
-    "task": "Live code on Thursday"
+    "completed": false,
+    "task": "Cook for dinner",
+    "created": "2018-11-07T10:08:05.390Z",
+    "updated": "2018-11-07T10:08:05.390Z"
   },
   {
     "id": 2,
-    "status": "uncomplete",
-    "task": "Review OOP"
+    "completed": false,
+    "task": "Study for tomorrow live code",
+    "created": "2018-11-07T10:08:20.801Z",
+    "updated": "2018-11-07T10:08:20.801Z",
+    "tag": [
+      "javascript",
+      "oop"
+    ]
   },
   {
     "id": 3,
-    "status": "uncomplete",
-    "task": "Learn MVC"
+    "completed": true,
+    "task": "Buy fruits",
+    "created": "2018-11-07T10:08:31.360Z",
+    "updated": "2018-11-07T10:22:05.451Z"
   }
 ]

@@ -1,6 +1,6 @@
 const argv = process.argv;
 const command = argv[2];
-const task = argv.slice(3)[0];
+const task = argv.slice(3);
 
 const Controller = require('./controllers/Controller.js');
 
