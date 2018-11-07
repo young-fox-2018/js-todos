@@ -21,7 +21,11 @@
         "id": 3,
         "task": "Kerjain Tugas",
         "status": false,
-        "tags": [],
+        "tags": [
+            "challenging",
+            "stressfull",
+            "rewarding"
+        ],
         "date": "2018-11-07T05:42:17.345Z"
     },
     {

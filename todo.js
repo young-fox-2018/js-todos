@@ -48,7 +48,7 @@ switch (argv[0]) {
         Controller.listCompleted("uncomplete")
         break;
     case ("addtag"):
-        Controller.addTag(argv[1], argv[2])
+        Controller.addTag(argv[1], argv.slice(2))
         break
     case ("filter"):
         Controller.filter(argv[1])
