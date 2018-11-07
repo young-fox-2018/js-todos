@@ -159,21 +159,25 @@ class Model {
     }
     static addTag(id, data) {
         let database = Model.readFile()
-        let isTrue = false
         let index = 0
         for (let k = 0; k < database.length; k++) {
-            if (database[i].id === id) index = i
-        }
-
-
-        for (let i = 0; i < database[index].tags.length; i++) {
-            for (let j = 0; j < data.length; j++) {
-                if (database[id].tags[i] === data[j]) isTrue = true
+            if (database[k].id === Number(id)) {
+                index = k
             }
         }
+        let isTrue = false
+        for (let i = 0; i < database[index].tags.length; i++) {
+            for (let j = 0; j < data.length; j++) {
+                if (database[index].tags[i] === data[j]) {
+                    isTrue = true
+                }
+
+            }
+        }
+
         if (isTrue === false) {
-            for (let i = 0; i < data.length; i++) {
-                database[id].tags.push(data[i])
+            for (let l = 0; l < data.length; l++) {
+                database[index].tags.push(data[l])
             }
             Model.save(database)
             return `completed add your Tag ${data} `
