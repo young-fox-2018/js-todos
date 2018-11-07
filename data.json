@@ -1,1 +1,55 @@
-[]
+[{
+    "id": 3,
+    "name": "Kerja",
+    "status": true,
+    "tags": [],
+    "createdAt": "2018-11-3"
+}, {
+    "id": 4,
+    "name": "tidur",
+    "status": true,
+    "tags": [],
+    "createdAt": "2018-11-4"
+}, {
+    "id": 5,
+    "name": "shutdown",
+    "status": true,
+    "tags": ["makan", "duren", "minum", "susu", "hobby", "pet"],
+    "createdAt": "2018-11-1"
+}, {
+    "id": 6,
+    "name": "shutdown my computer",
+    "status": false,
+    "tags": [],
+    "createdAt": "2018-11-7"
+}, {
+    "id": 7,
+    "name": "do some code",
+    "status": true,
+    "tags": [],
+    "createdAt": "2018-11-7"
+}, {
+    "id": 8,
+    "name": "do some exercise",
+    "status": false,
+    "tags": [],
+    "createdAt": "2018-11-7"
+}, {
+    "id": 9,
+    "name": "makan mandi tidur",
+    "status": false,
+    "tags": [],
+    "createdAt": "2018-11-7"
+}, {
+    "id": 10,
+    "name": "mau mandi saja",
+    "status": false,
+    "tags": [],
+    "createdAt": "2018-11-7"
+}, {
+    "id": 11,
+    "name": "makan minum",
+    "status": false,
+    "tags": [],
+    "createdAt": "2018-11-9"
+}]
