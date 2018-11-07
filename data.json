@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "task": "bikin aplikasi",
+    "complete": false,
+    "created": "2018-11-07T10:21:21.316Z"
+  },
+  {
+    "task": "main node.js",
+    "complete": true,
+    "created": "2018-11-07T10:21:35.077Z"
+  },
+  {
+    "task": "shut down my comp",
+    "complete": true,
+    "created": "2018-11-07T10:21:47.298Z"
+  },
+  {
+    "task": "shut down my comp",
+    "complete": false,
+    "created": "2018-11-07T11:42:44.029Z"
+  }
+]
