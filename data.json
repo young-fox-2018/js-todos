@@ -1,1 +1,45 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "main node.js",
+    "completed": false,
+    "tags": [],
+    "created_date": "2018-11-07T10:12:00.898Z",
+    "updated_date": "2018-11-07T10:12:00.898Z"
+  },
+  {
+    "id": 2,
+    "task": "shut down computer",
+    "completed": false,
+    "tags": [],
+    "created_date": "2018-11-07T10:12:09.542Z",
+    "updated_date": "2018-11-07T10:12:09.542Z"
+  },
+  {
+    "id": 3,
+    "task": "belajar logic",
+    "completed": false,
+    "tags": [],
+    "created_date": "2018-11-07T10:12:21.599Z",
+    "updated_date": "2018-11-07T10:12:21.599Z"
+  },
+  {
+    "id": 4,
+    "task": "belanja bulanan",
+    "completed": true,
+    "tags": [],
+    "created_date": "2018-11-07T10:12:45.922Z",
+    "updated_date": "2018-11-07T10:12:51.616Z"
+  },
+  {
+    "id": 5,
+    "task": "running",
+    "completed": false,
+    "tags": [
+      "hobby",
+      "sport"
+    ],
+    "created_date": "2018-11-07T10:23:27.834Z",
+    "updated_date": "2018-11-07T10:53:02.331Z"
+  }
+]
