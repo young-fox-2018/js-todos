@@ -1,1 +1,26 @@
-[]
+[
+  {
+    "task": "Bikin aplikasi",
+    "completed": "[ ]",
+    "create date": "",
+    "update date": ""
+  },
+  {
+    "task": "Main Node.js",
+    "completed": "[ ]",
+    "create date": "",
+    "update date": ""
+  },
+  {
+    "task": "drink",
+    "completed": "[ ]",
+    "create date": "",
+    "update date": ""
+  },
+  {
+    "task": "e",
+    "completed": "[x]",
+    "create date": "2018-11-07T08:19:09.174Z",
+    "update date": "2018-11-07T08:19:09.174Z"
+  }
+]
