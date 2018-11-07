@@ -1,0 +1,12 @@
+$ node todo.js 
+$ node todo.js help
+$ node todo.js list
+$ node todo.js add <task_content>
+$ node todo.js findById <task_id>
+$ node todo.js delete <task_id>
+$ node todo.js complete <task_id>
+$ node todo.js uncomplete <task_id>
+$ node todo.js list:created asc||desc
+$ node todo.js list:outstanding asc||desc
+$ node todo.js list:completed asc||desc
+$ node todo.js tag <task_id><tags>
