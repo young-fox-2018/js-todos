@@ -1,1 +1,55 @@
-[]
+[
+    {
+        "id": 1,
+        "task": "Sarapan",
+        "status": true,
+        "tags": [
+            "happy",
+            "molly",
+            "olala"
+        ],
+        "date": "2018-11-07T05:42:47.615Z"
+    },
+    {
+        "id": 2,
+        "task": "Kelas Intro to MVC",
+        "status": true,
+        "tags": [],
+        "date": "2018-11-07T05:42:28.015Z"
+    },
+    {
+        "id": 3,
+        "task": "Kerjain Tugas",
+        "status": false,
+        "tags": [],
+        "date": "2018-11-07T05:42:17.345Z"
+    },
+    {
+        "id": 4,
+        "task": "Denger Musik",
+        "status": true,
+        "tags": [],
+        "date": "2018-11-07T05:41:59.657Z"
+    },
+    {
+        "id": 5,
+        "task": "Makan Sore",
+        "status": false,
+        "tags": [],
+        "date": "2018-11-07T05:41:29.655Z"
+    },
+    {
+        "id": 6,
+        "task": "Belajar Live Code",
+        "status": false,
+        "tags": [],
+        "date": "2018-11-07T05:41:10.766Z"
+    },
+    {
+        "id": 7,
+        "task": "You Tube",
+        "status": false,
+        "tags": [],
+        "date": "2018-11-07T05:39:52.161Z"
+    }
+]
