@@ -1,1 +1,20 @@
-[]
+[
+  {
+    "id": 1,
+    "task": "bikin aplikasi",
+    "status": "uncomplete",
+    "created": "2018-11-07T08:30:28.343Z"
+  },
+  {
+    "id": 2,
+    "task": "Main node js",
+    "status": "uncomplete",
+    "created": "2018-11-07T08:30:45.394Z"
+  },
+  {
+    "id": 3,
+    "task": "Shut down my computer",
+    "status": "uncomplete",
+    "created": "2018-11-07T08:30:58.775Z"
+  }
+]
