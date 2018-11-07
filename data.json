@@ -1,1 +1,17 @@
-[]
+[
+  {
+    "id": 1,
+    "status": "uncomplete",
+    "task": "Live code on Thursday"
+  },
+  {
+    "id": 2,
+    "status": "uncomplete",
+    "task": "Review OOP"
+  },
+  {
+    "id": 3,
+    "status": "uncomplete",
+    "task": "Learn MVC"
+  }
+]
