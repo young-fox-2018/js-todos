@@ -22,5 +22,11 @@
         "task": "Makan sore",
         "status": false,
         "checkBox": "[ ]"
+    },
+    {
+        "id": 5,
+        "task": "Makan malam",
+        "status": false,
+        "checkBox": "[ ]"
     }
 ]
