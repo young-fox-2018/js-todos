@@ -1,0 +1,17 @@
+[
+    {
+        "date": "2018-11-07T09:31:57.929Z",
+        "check": true,
+        "task": "Php exercise"
+    },
+    {
+        "date": "2018-11-07T09:32:03.977Z",
+        "check": false,
+        "task": "Phyton exercise"
+    },
+    {
+        "date": "2018-11-07T09:32:29.689Z",
+        "check": false,
+        "task": "Mind relaxation"
+    }
+]
