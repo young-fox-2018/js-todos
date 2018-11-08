@@ -52,7 +52,7 @@ class Controller{
     }
     static filter(task_id){
         let arrIndex = Models.filter(task_id)
-        View.listFilter(arrIndex) 
+        View.list(arrIndex) 
     }
 }
 

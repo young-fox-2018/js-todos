@@ -8,6 +8,7 @@ class Models{
         obj.status = false
         obj.createdAt = new Date()
         obj.tags = []
+        dataFile = JSON.parse(dataFile)
         dataFile.push(obj)
         dataFile = JSON.stringify(dataFile, null, 2)
         fs.writeFileSync("data.json",dataFile)
@@ -108,10 +109,9 @@ class Models{
                 input.splice(h,1)
             }
         }
-
         for(let i = 0 ; i < dataFile.length ; i++){
             if(i === itemNo){
-                if(dataFile[i]["tags"] === []){
+                if(dataFile[i]["tags"].length <= 0){
                     for(let iInput = 0 ; iInput < input.length ; iInput++){
                         dataFile[i]["tags"].push(input[iInput])
                     }
@@ -128,11 +128,10 @@ class Models{
                         }
                     }
                 }
-
                 dataFile = JSON.stringify(dataFile, null, 2)
             }
+            fs.writeFileSync("data.json",dataFile)
         }
-        fs.writeFileSync("data.json",dataFile)
     }
     static filter(input){
         dataFile = JSON.parse(dataFile)
@@ -140,11 +139,11 @@ class Models{
         for(let i = 0 ; i < dataFile.length ; i++){
             for(let iTags = 0 ; iTags < dataFile[i]["tags"].length ; iTags++){
                 if(input === dataFile[i]["tags"][iTags]){
-                    res.push(i)
+                    res.push(dataFile[i])
                 }
             }
-            return [res, dataFile]
         }
+        return res
     }
 
     

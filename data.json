@@ -25,5 +25,14 @@
     "createdAt": "2018-11-07T08:54:11.376Z",
     "updatedAt": "2018-11-07T14:03:48.869Z",
     "tags": []
+  },
+  {
+    "task": "Rest",
+    "status": true,
+    "createdAt": "2018-11-08T13:19:58.629Z",
+    "tags": [
+      "leisure"
+    ],
+    "updatedAt": "2018-11-08T13:20:19.880Z"
   }
 ]
