@@ -12,8 +12,14 @@ class View{
 
   static list(data) {
     let result = ''
+
     for (let i = 0; i < data.length; i++) {
-        result += ` ${i+1}. ${data[i].task} \n`
+      if (data[i].status === "complete"){
+        console.log(`${data[i].id}. [X] ${data[i].task} `)
+      } else {
+        console.log(`${data[i].id}. [ ] ${data[i].task} `)
+
+      }
     }
     console.log(result)
   }
@@ -29,20 +35,7 @@ class View{
   static delete(task){
     console.log(`Deleted ${task} from your TODO list ...`)
   }
-
-  static displayStatus(data){
-    let result = ''
-
-    for (let i = 0; i < data.length; i++) {
-      if (data[i].status === "complete"){
-        result += `${data[i].id}. [X] ${data[i].task} \n`
-      }else {
-        result += `${data[i].id}. [ ] ${data[i].task} \n`
-
-      }
-    }
-    console.log(result)
-  }
+  
 }
 
 module.exports = View

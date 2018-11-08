@@ -12,6 +12,11 @@ class Controller {
       case 'delete': Controller.delete(task); break;
       case 'complete': Controller.complete(task); break;
       case 'uncomplete': Controller.uncomplete(task); break;
+      case 'created': Controller.created(task); break;
+      case 'completed': Controller.completed(task); break;
+      case 'tag': Controller.tag(task); break;
+      // case 'filter': Controller.filter(task); break;
+
       default: Controller.help() ; break;
     }
   }
@@ -41,15 +46,35 @@ class Controller {
   }
 
   static complete(task){
-    let data = Model.readFile()
     Model.complete(task)
-    View.displayStatus(data)
+    this.list()
   }
 
   static uncomplete(task){
-    let data = Model.readFile()
     Model.uncomplete(task)
-    View.displayStatus(data)
+    this.list()
+  }
+
+  static created(task) {
+    let data = Model.readFile()
+    if(task == 'asc') {
+      this.list()   
+    } else {
+      data = Model.sortDesc(data)
+      View.list(data)
+    }
+  }
+
+  static completed(task) {
+    let data = Model.getByComplete()
+    if (task == 'desc') {
+      data = Model.sortDesc(data)
+      View.list(data)
+    }
+  }
+
+  static tag(task){
+    Model.tag(task)
   }
 }
 

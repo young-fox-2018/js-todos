@@ -10,7 +10,9 @@ class Model {
     let data = this.readFile()
     let result = {
       "id": data.length+1,
-      "task": task}
+      "task": task,
+      "status": "uncomplete",
+      "created": new Date()}
     data.push(result)
     this.save(JSON.stringify(data, null,1))
 
@@ -37,7 +39,7 @@ class Model {
     let data = Model.readFile()
     let result = ''
     
-    for (let i = 1; i < data.length; i++) {
+    for (let i = 0; i < data.length; i++) {
       if(data[i].id === Number(task)){
         result += data[i].task
         data.splice(i,1)
@@ -74,7 +76,40 @@ class Model {
     Model.save(JSON.stringify(data, null , 2))
 
   }
+  
+  static sortDesc(data) {
 
+    data.sort(function(a, b) {
+      var dataA = new Date(a.created), dataB = new Date(b.created);
+      return dataB - dataA;
+    });
+    return data
+  } 
+
+  static getByComplete() {
+    let data = Model.readFile()
+    let result = []
+    for (let i = 0; i < data.length; i++) {
+      if(data[i].status == 'complete'){
+        result.push(data[i])
+      }    
+    }
+    return result
+  }
+
+  static tag(task) {
+    let id = task[0]
+    let comment = task.slice(1)
+    let data = Model.readFile()
+
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].id == id) {
+        data[i].tag = [comment]
+      }
+    }
+    this.save(JSON.stringify(data, null,1))
+    return 'Tagged task '
+  }
 }
 
 module.exports = Model
