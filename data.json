@@ -1,1 +1,23 @@
-[]
+[
+ {
+  "id": 1,
+  "task": "Bikin aplikasi",
+  "status": "uncomplete",
+  "created": "2018-11-07T08:34:13.372Z"
+ },
+ {
+  "id": 2,
+  "task": "main Node.js",
+  "status": "complete",
+  "created": "2018-11-07T08:34:35.174Z",
+  "tag": [
+   " Hobby cat"
+  ]
+ },
+ {
+  "id": 3,
+  "task": "Shut down my computer",
+  "status": "complete",
+  "created": "2018-11-07T08:34:49.769Z"
+ }
+]
