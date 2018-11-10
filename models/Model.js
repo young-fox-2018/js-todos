@@ -1,5 +1,3 @@
-
-
 class Model {
     static setData(inputData){
         const fs = require('fs')
@@ -133,7 +131,7 @@ class Model {
         return Model.makeList()
     }
     static makeUncomplete(params) {
-        let dataList = data
+        let dataList = Model.getData()
         let result = ''
         for (let i = 0; i < dataList.length; i++) {
             if (dataList[i].check != '[ ]' && dataList[i].id == params) {
@@ -141,7 +139,7 @@ class Model {
             }
         }
         let inputData = JSON.stringify(dataList)
-        fs.writeFileSync('/home/taqi/Documents/Hacktiv8/phase1/w2/d3/js-todos/data.json', inputData)
+        Model.setData(inputData)
         return Model.makeList()
     }
 
