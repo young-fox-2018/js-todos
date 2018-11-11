@@ -98,7 +98,7 @@ class Model {
     }
 
     static makeDelete(params) {
-        let dataList = data
+        let dataList = Model.getData()
         let result = ''
         for (let i = 0; i < dataList.length; i++) {
             if (dataList[i].id == params) {
@@ -112,7 +112,7 @@ class Model {
             }
         }
         let inputData = JSON.stringify(dataList)
-        fs.writeFileSync('/home/taqi/Documents/Hacktiv8/phase1/w2/d3/js-todos/data.json', inputData)
+        Model.setData(inputData)
         return result
     }
 

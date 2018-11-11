@@ -5,6 +5,7 @@ let command = argv[0]
 let option = argv[1]
 let sortType = undefined
 
+//FIXME:
 if (argv != undefined) {
     if (argv[0] != undefined && argv[0].match(':')) {
         sort = argv[0].split(':')
@@ -21,12 +22,8 @@ if (argv != undefined) {
         option = argv[1]
         tag = argv.slice(2)
         
-        Controller.execute(command, option, tag)
-        
-        
+        Controller.execute(command, option, tag)   
     }
-
-
 } else {
     Controller.execute(command, option, sortType)
 }
