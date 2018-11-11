@@ -1,14 +1,16 @@
 class Model {
     static setData(inputData){
         const fs = require('fs')
-        fs.writeFileSync('/home/taqi/Documents/Hacktiv8/phase1/w2/d3/js-todos/data.json', inputData)
+        fs.writeFileSync('./data.json', inputData)
     }
+
     static getData() {
         let fs = require('fs')
-        let data = JSON.parse(fs.readFileSync('/home/taqi/Documents/Hacktiv8/phase1/w2/d3/js-todos/data.json', 'utf8'))
+        let data = JSON.parse(fs.readFileSync('./data.json', 'utf8'))
         let dataList = data
         return dataList
     }
+
     static makeList(command, option, sortType) {
         if (sortType == undefined && option == undefined) {
             let data = Model.getData()
@@ -64,6 +66,7 @@ class Model {
         console.clear()
         let dataList = Model.getData()
         let idCounter = 1
+        let result = ''
         for (let i = 0; i < dataList.length; i++) {
             idCounter++
         }
@@ -78,8 +81,20 @@ class Model {
         dataList.push(obj)
         let inputData = JSON.stringify(dataList)
         Model.setData(inputData)
-
+        
+        //RETURN LIST AFTER ADD
+        let counter = 0
+        dataList.forEach(element => {
+            counter++
+            if (counter == Model.getData().length) {
+                result += `${counter}. ${element.check} ${element.name} <=== ADDED!\n`    
+            } else {
+                result += `${counter}. ${element.check} ${element.name} \n`
+            }
+        });
+        return result
     }
+    
     static idFind(params) {
         let data = Model.getData()
         let result = ''
@@ -106,6 +121,8 @@ class Model {
                 dataList.splice(i, 1)
             }
         }
+
+        //SORT ID
         for (let i = 0; i < dataList.length; i++) {
             if (dataList[i].id != i + 1) {
                 dataList[i].id = i + 1
